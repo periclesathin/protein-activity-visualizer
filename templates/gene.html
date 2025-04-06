@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{{ gene }} – Protein Data</title>
+</head>
+
+    <body>
+        <h1>Boxplot for gene: {{ gene }}</h1>
+        <div>{{ plot_html|safe }}</div>
+        <a href="/">← Back to Volcano Plot</a>
+        <h2>Related Publications</h2>
+        <ul>
+          {% if publications %}
+            {% for article in publications %}
+              <li><a href="{{ article.url }}" target="_blank">{{ article.title }}</a></li>
+            {% endfor %}
+          {% else %}
+            <li>No publications found.</li>
+          {% endif %}
+        </ul>
+
+    </body>
+    
+
+
+</html>
